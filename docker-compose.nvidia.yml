@@ -34,7 +34,7 @@ services:
     environment:
       - DISPLAY=:1
     ports:
-      - "3000:80"
+      - "3001:80"
     healthcheck:
       test: ["CMD-SHELL", "test -e /tmp/.X11-unix/X0"]
       interval: "1s"
@@ -65,8 +65,8 @@ services:
       - seccomp:unconfined
     runtime: nvidia
     ports:
-      - "3001:3000"
-      - "3002:8888"
+      - "3002:3000"
+      - "3003:8888"
     volumes:
       - .:/workspace:cached
       - ~/.gitconfig:/home/developer/.gitconfig
